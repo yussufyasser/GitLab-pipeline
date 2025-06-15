@@ -1,14 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket         = "my-web-app-tf-state"
-    key            = "eks/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-locks-web-app"
-    encrypt        = true
-  }
-}
-
-[root@ip-172-31-27-29 terraform]# cat main.tf 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.4.0"
